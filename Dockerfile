@@ -1,18 +1,23 @@
-FROM node:alpine
+FROM node:16-alpine as builder
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+WORKDIR /app
 
-RUN apk update && apk upgrade
-RUN apk add git
+COPY . .
 
-COPY . /usr/src/app/
-RUN npm install
+RUN npm ci
+
 RUN npm run generate
 
-EXPOSE 3000
+RUN rm -rf node_modules && \
+  NODE_ENV=production npm ci
 
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3000
+FROM node:16-alpine
+
+WORKDIR /app
+
+COPY --from=builder /app  .
+
+ENV HOST 0.0.0.0
+EXPOSE 3000
 
 CMD [ "npm", "start" ]
