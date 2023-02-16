@@ -14,7 +14,7 @@ export default {
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: 'If he listens to music on Spotify you can see what he´s up to!' },
+            { hid: 'description', name: 'description', content: 'Is he sitting or standing?' },
             { name: 'format-detection', content: 'telephone=yes' }
         ],
         link: [
