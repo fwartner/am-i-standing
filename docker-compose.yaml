@@ -1,0 +1,8 @@
+version: '3.3'
+
+services:
+  api:
+    image: ghcr.io/fwartner/am-i-standing:main
+    restart: always
+    ports:
+      - 4000:4000
