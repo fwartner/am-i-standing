@@ -23,7 +23,7 @@
       </div>
       <div v-else class="mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6">
         <h2 class="text-2xl leading-7 font-semibold">
-          Florian is not standing in front of his desk. He is probably sitting on the couch.
+          Florian is not standing in front of his desk. He is probably sitting on the couch. Could be that he is even sleeping. Or maybe he is just not at home. Or he is simply sitting in front of his desk. Who knows?
         </h2>
       </div>
     </div>
