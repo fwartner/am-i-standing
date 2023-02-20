@@ -35,8 +35,10 @@ const data = {
   query: `
     query {
         home {
-          isStanding
-        }
+    desk {
+      isStanding
+    }
+  }
     }
   `
 }
@@ -71,7 +73,7 @@ export default {
       this.$axios
         .$post('https://api.wartner.io', data, headers)
         .then((response) => {
-          if (response.data.home.isStanding === true) {
+          if (response.data.home.desk.isStanding === true) {
             this.isStanding = true
           }
         })
